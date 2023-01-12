@@ -1,0 +1,38 @@
+
+<h1>Orders</h1>
+
+
+<table border = "1" cellpadding = "5" cellspacing = "5">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>phone</th>
+            <th>postal</th>
+            <th>Total</th>
+            <th>isExpress</th>
+            <th>Products</th>
+            <th>Delete</th>
+         </tr>
+
+         {{# each orders }}
+         <tr>
+            <td>{{ this.name }}</td>
+            <td>{{ this.adress }}</td>
+            <td>{{ this.phone }}</td>
+            <td>{{ this.postal }}</td>
+            <td>{{ this.total }}</td>
+            {{!-- {{# if {{ this.isExpress }} }}
+            <td>Yes</td>
+            {{else}}
+            <td>No</td>
+            {{/if}} --}}
+            <td>{{ this.isExpress }}</td>
+            <td><a href="/shop/updateorder/{{ this._id }}" class="btn btn-success pull-right" role="button">Show</a></td>
+            <td><a href="/delorder/{{ this._id }}" class="btn btn-success pull-right" role="button"><i class="fa fa-trash" aria-hidden="true"></a></td>
+        </tr>
+         {{/each}}
+</table>
+
+
+
+

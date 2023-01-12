@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Ameer for Delivery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">
+          <i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/products/">
+          <i class="fa fa-amazon" aria-hidden="true"></i> Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
+            <span class="badge inside bg-pink fg-white" id="cartqty"> {{ session.chout.totalQty }}</span>
+          </a>
+        </li>
+       
+       {{!-- Admin --}}
+        {{!-- <li class="nav-item">
+          <a class="nav-link disabled">Orders</a>
+        </li> --}}
+      </ul>
+      <div class="dropdown">
+                    <button class="dropbtn" id="dropbtnuser" style="display: block" ><i class="fa fa-user" aria-hidden="true"></i> User Management </button>
+                    <div class="dropdown-content">
+                      {{# if login }}
+                        <a href="/user/profile">User Account</a>
+                        
+                        <a href="/user/logut">Logout <i class="fa fa-user" aria-hidden="true"></i></a>
+                      {{ else }}
+                         <a href="/user/signin">Sign in</a>
+                        
+                        <a href="/user/signup">Sign up</a>
+                      {{/if}}
+                    </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+{{!-- <span class="caret"></span> --}} 
+{{!-- role="button" aria-haspopup="true" aria-expanded="false" --}}
+{{!-- href="#" class="dropdown-toggle" onclick="myFunction()" data-toggle="dropdown" --}}

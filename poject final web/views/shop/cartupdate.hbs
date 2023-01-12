@@ -1,0 +1,54 @@
+{{# if products}}
+
+<div class="row">
+  
+    <ul class="list-group">
+      {{# each products}}
+      <li class="list-group-item">
+        <div class="row">
+        <div class="col-4" id="Qty">
+        <span class='badge'>{{this.qty}}</span>
+  </div>
+  <div class="col-4" id="titlenprice">
+        
+        <strong class='label label-success'>{{this.item.title}}    {{this.price}}$</strong>
+  </div>
+  {{!-- <div class="col-4" id="btns">
+        <a href="/add/{{ this.item._id }}" type="button" class="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a href="/minus/{{ this.item._id }}" type="button" class="button"><i class="fa fa-minus" aria-hidden="true"></i></a> 
+        <a href="/del/{{ this.item._id }}" type="button" class="button"><i class="fa fa-trash" aria-hidden="true"></i></a>  
+  </div> --}}
+  </div>      
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div> 
+</br>
+<div class="row">
+ 
+  <div class="col-4"> </div>
+  <div class="col-4">
+    <strong class="total" >Total: {{totalPrice}}$</strong>
+  </div>
+  <div class="col-4"></div>
+   
+</div>
+<hr>
+<div class="row">
+  <div class="col-4"> </div>
+  <div class="col-4">
+   <a href="/shop/orders" id="btn2" type="button" class="btn btn-success" role= "button">return</a>  
+  </div>
+  <div class="col-4"></div>
+</div>
+{{else}}
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+    <h2>No items in cart</h2>
+  </div>
+</div>
+
+{{/if}}
+
+
